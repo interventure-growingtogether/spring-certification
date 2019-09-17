@@ -10,6 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>quiz01</module>
+    <module>quiz2</module>
   </modules>
 
   <build>
@@ -27,5 +28,9 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <properties>
+    <spring.version>5.1.9.RELEASE</spring.version>
+  </properties>
 
 </project>

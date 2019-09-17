@@ -10,6 +10,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>quiz01</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>cg12</module>
+    <module>o1</module>
+  </modules>
 
   <dependencies>
     <!--basic spring library-->
@@ -25,8 +30,6 @@
       </exclusions>
     </dependency>
   </dependencies>
-  <properties>
-    <spring.version>5.1.9.RELEASE</spring.version>
-  </properties>
+
 
 </project>

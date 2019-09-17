@@ -1,6 +1,5 @@
 package org.interventure.quiz.o1;
 
-import java.util.Map;
 import org.springframework.stereotype.Component;
 
 /**

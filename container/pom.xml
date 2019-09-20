@@ -11,6 +11,7 @@
   <modules>
     <module>quiz01</module>
     <module>quiz2</module>
+    <module>quiz03</module>
   </modules>
 
   <build>

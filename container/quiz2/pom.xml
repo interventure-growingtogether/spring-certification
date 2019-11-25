@@ -13,6 +13,8 @@
   <packaging>pom</packaging>
   <modules>
     <module>cg06</module>
+    <module>orig07</module>
+    <module>itj13</module>
   </modules>
 
 

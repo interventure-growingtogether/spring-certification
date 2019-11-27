@@ -3,23 +3,23 @@ package org.interventure.configuration.subclass;
 import org.interventure.configuration.AppConfig;
 import org.interventure.configuration.ClientDao;
 
-public class ConfigurationProxyConfig extends AppConfig {
+public class ConfigurationSubclassProxy extends AppConfig {
 
-  private ClientDao clientDao;
+  private ClientDao target;
 
   @Override
   public ClientDao clientDao() {
-    if (clientDao == null) {
-      clientDao = super.clientDao();
+    if (target == null) {
+      target = super.clientDao();
     }
-    return clientDao;
+    return target;
   }
 
 
-  public static class Proxy {
+  public static class ProxyCreator {
 
     public static AppConfig newProxyInstance() {
-      return new ConfigurationProxyConfig();
+      return new ConfigurationSubclassProxy();
     }
 
   }

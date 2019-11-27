@@ -17,7 +17,7 @@ public class DynamicProxyAppConfigTest {
 
   @Test
   public void testSingleton() {
-    Config appConfig = (Config) Proxy.newProxyInstance(DynamicProxyAppConfigTest.class.getClassLoader(), new Class[]{Config.class}, new DynamicProxyAppConfig(      new AppConfig()));
+    Config appConfig = (Config) Proxy.newProxyInstance(DynamicProxyAppConfigTest.class.getClassLoader(), new Class[]{Config.class}, new AppConfigDynamicProxy(new AppConfig()));
 
     ClientService cs = appConfig.clientService1();
     ClientService cs2 = appConfig.clientService2();

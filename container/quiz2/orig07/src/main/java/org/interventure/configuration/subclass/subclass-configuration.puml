@@ -1,0 +1,11 @@
+@startuml
+
+class t as "AppConfig"<<target>>
+class  p as "ConfigurationProxyConfig"<<proxy>> {
+  ClientDao clientDao
+}
+class c as "ProxyFactory"
+
+t <|-- p
+c -right-> p
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+
+interface ti as "Config"
+interface ih as "InvocationHandler"
+class t as "AppConfig"<<target>>
+class  p as "AppConfigDynamicProxy"<<proxy>> {
+  ClientDao clientDao
+  Config target
+  invoke()
+}
+
+t -up-|> ti
+p -up-|> ih
+p -right-> t
+@enduml

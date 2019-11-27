@@ -15,7 +15,7 @@ public class CglibSubclassBasedProxyTest {
 
   @Test
   public void testSingleton() {
-    AppConfig appConfig = CglibSubclassBasedProxy.newProxyInstance(new AppConfig());
+    AppConfig appConfig = ProxyCreator.newProxyInstance(new AppConfig());
 
     ClientService cs = appConfig.clientService1();
     ClientService cs2 = appConfig.clientService2();

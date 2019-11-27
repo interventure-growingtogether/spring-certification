@@ -1,0 +1,21 @@
+@startuml
+participant ConfigurationSubclassProxyTest as c
+participant ProxyFactory as pf
+participant ConfigurationSubclassProxy as p
+
+c -> pf : newProxyInstance()
+c <- pf : ap::ConfigurationSubclassProxy
+c -> p : clientService1()
+activate p
+p -> p : clientDao()
+activate p
+p -> p : super.clientDao()
+p -> c :cs1
+deactivate p
+c -> p : clientService2()
+p -> p : clientDao()
+note right : does not call super
+p -> c :cs2
+deactivate p
+
+@enduml

@@ -5,22 +5,14 @@ import org.interventure.configuration.ClientDao;
 
 public class ConfigurationSubclassProxy extends AppConfig {
 
-  private ClientDao target;
+  private ClientDao dao;
 
   @Override
   public ClientDao clientDao() {
-    if (target == null) {
-      target = super.clientDao();
+    if (dao == null) {
+      dao = super.clientDao();
     }
-    return target;
+    return dao;
   }
 
-
-  public static class ProxyCreator {
-
-    public static AppConfig newProxyInstance() {
-      return new ConfigurationSubclassProxy();
-    }
-
-  }
 }

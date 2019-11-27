@@ -1,0 +1,20 @@
+@startuml
+participant ConfigurationSubclassProxyTest as c
+participant ProxyFactory as pf
+participant SubclassBasedProxy as p<<proxy>>
+participant AppConfig as t<<target>>
+
+c -> pf : newProxyInstance()
+c <- pf : ap::ConfigurationSubclassProxy
+c -> p : clientService1()
+p -> t : clientService1()
+t -> t : clientDao()
+t -> p:cs1
+p -> c :cs1
+c -> p : clientService2()
+p -> t : clientService2()
+t -> t : clientDao()
+t -> p:cs2
+p -> c :cs2
+
+@enduml

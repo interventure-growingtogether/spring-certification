@@ -5,7 +5,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import org.hamcrest.CoreMatchers;
 import org.interventure.configuration.AppConfig;
 import org.interventure.configuration.ClientService;
-import org.interventure.configuration.subclassproxy.SubclassBasedProxy.Proxy;
 import org.junit.Test;
 
 /**
@@ -17,12 +16,12 @@ public class SubclassBasedProxyTest {
   @Test
   public void testSingleton() {
 
-    AppConfig appConfig = Proxy.newProxyInstance();
+    AppConfig appConfig = new SubclassBasedProxy(new AppConfig());
 
-    ClientService clientService = appConfig.clientService1();
-    ClientService clientService2 = appConfig.clientService2();
+    ClientService cs1 = appConfig.clientService1();
+    ClientService cs2 = appConfig.clientService2();
 
-    assertThat(clientService.getClientDao() == clientService2.getClientDao(), CoreMatchers.is(Boolean.TRUE));
+    assertThat(cs1.getClientDao() == cs2.getClientDao(), CoreMatchers.is(Boolean.FALSE));
   }
 
 }

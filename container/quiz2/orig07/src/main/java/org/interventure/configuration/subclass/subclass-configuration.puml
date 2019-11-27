@@ -1,7 +1,7 @@
 @startuml
 
-class t as "AppConfig"<<target>>
-class  p as "ConfigurationProxyConfig"<<proxy>> {
+class t as "AppConfig"
+class  p as "ConfigurationSubclassProxy"<<proxy>> {
   ClientDao clientDao
 }
 class c as "ProxyFactory"
